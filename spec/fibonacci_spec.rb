@@ -17,6 +17,12 @@ module FibonacciSpec
     it "should return the fibinacci sequence in recursive mode" do
       @answer.fib(10).should == [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
     end
+
+    it "should return the correct fibonacci number in explicit mode" do
+      @answer.fib(5).should == 5
+      @answer.fib(10).should == 55
+      @answer.fib(12).should == 144
+    end
   end
 
 
