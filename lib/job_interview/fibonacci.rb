@@ -11,6 +11,8 @@ module JobInterview
         iterative_fib(n)
       elsif args && args.include?(:matrix)
         matrix_fib(n)
+      elsif args && args.include?(:explicit)
+        explicit_fib(n)
       else
         ## TODO: make this efficient
         return Array.new(n) {|i| recursive_fib(i + 1) }
@@ -40,6 +42,11 @@ module JobInterview
         fibonacci_matrix = Matrix[[1,1],[1,0]]
         (fibonacci_matrix**(i-1)) [0,0]
       end
+    end
+
+    Phi = 1.6180339887498948482
+    def explicit_fib(n)
+      ((Phi**n - (-Phi)**(-n))/Math.sqrt(5)).round
     end
 
   end
